@@ -10,7 +10,11 @@ def find_weather_temp():
     if response.json()['cod'] == "404":
         print('city not found')
     else:
-        print('temperature:', response.json()['main']['temp'])
+        temp_in_fahrenheit = float(response.json()['main']['temp'])
+        converted_temp = temp_in_fahrenheit - 273.15
+        humidity = response.json()['main']['humidity']
+        print('temperature:', round(converted_temp, 3), 'celsius')
+        print('humidity of weather in', city_name, ':', humidity)
         print('country of city:', response.json()['sys']['country'])
 
 
