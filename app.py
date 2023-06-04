@@ -3,14 +3,10 @@ import tkinter as tk
 import requests
 from datetime import datetime
 
-# Initialize Window
 root = tk.Tk()
 root.geometry("400x400")
-# title of our window
+
 root.title("International Weather App")
-
-
-# city_value = tk.StringVar()
 
 
 def time_format_for_location(utc_with_tz):
@@ -55,8 +51,6 @@ inp_city = tk.Entry(root, textvariable=city_value, width=24, font='Arial 14 bold
 
 tk.Button(root, command=show_weather, text="Check Weather", font="Arial 10", bg='lightblue', fg='black',
           activebackground="teal", padx=5, pady=5).pack(pady=20)
-
-# to show output
 
 weather_now = tk.Label(root, text="The Weather is:", font='arial 12 bold').pack(pady=10)
 
